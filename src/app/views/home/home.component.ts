@@ -9,22 +9,10 @@ import {Product} from '../../components/product/product.model';
 })
 export class HomeComponent implements OnInit {
 
-  products: any;
-
-  constructor(private productService: ProductService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.getProducts();
-  }
-
-  getProducts() {
-    this.productService.getProducts().subscribe(
-      (data: Product) => {
-        this.products = data;
-        console.log('data: ' + data);
-      }
-    );
   }
 
 }

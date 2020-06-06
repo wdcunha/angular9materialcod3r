@@ -19,6 +19,16 @@
       "name": "Product test",
       "price": 125.08,
       "id": 4
+    },
+    {
+      "name": "ngmodule",
+      "price": "1090.99",
+      "id": 5
+    },
+    {
+      "name": "Geladeira",
+      "price": "2500",
+      "id": 6
     }
   ]
 }

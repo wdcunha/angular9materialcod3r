@@ -34,7 +34,22 @@ export class ProductService {
     return this.httpClient.post<Product>(this.producDBUrl, product);
   }
 
-  getProducts(): Observable<any> {
-    return this.httpClient.get(this.producDBUrl, headerOption);
+  getProducts(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.producDBUrl, headerOption);
   }
+
+  readProduct(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.producDBUrl);
+  }
+
+  readById(id: string): Observable<Product> {
+    const url = `${this.producDBUrl}/${id}`;
+    return this.httpClient.get<Product>(url);
+  }
+
+  update(product: Product): Observable<Product> {
+    const url = `${this.producDBUrl}/${product.id}`;
+    return this.httpClient.put<Product>(url, product);
+  }
+
 }

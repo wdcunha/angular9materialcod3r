@@ -24,7 +24,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
    createProduct(): void {
-    console.log(this.product);
+    // console.log(this.product);
     this.productService.createProduct(this.product).subscribe(() => {
       this.productService.showMessage('Produto criado com sucesso!');
       this.router.navigate(['/products']);
@@ -32,7 +32,7 @@ export class ProductCreateComponent implements OnInit {
   }
 
   cancel() {
-    this.productService.showMessage('Operação cancelada!');
+    this.productService.showMessage('Criação de Produto cancelada!');
     this.router.navigate(['products']);
   }
 }
